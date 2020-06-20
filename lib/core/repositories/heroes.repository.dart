@@ -26,8 +26,8 @@ class HeroesRepository {
     return cache.then((cache) => cache["heroes"]);
   }
 
-  Future<List<Character>> fetchVilains() async {
-    return cache.then((cache) => cache["vilains"]);
+  Future<List<Character>> fetchVillains() async {
+    return cache.then((cache) => cache["villains"]);
   }
 
   Future<List<Character>> fetchAntiHeroes() async {
