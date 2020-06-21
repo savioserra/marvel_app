@@ -21,22 +21,17 @@ class Character {
   });
 
   factory Character.fromJson(Map<String, dynamic> json) {
-    final caracteristics = json['caracteristics'] != null
-        ? Caracteristics.fromJson(json['caracteristics'])
-        : null;
-
-    final abilities = json['abilities'] != null
-        ? Abilities.fromJson(json['abilities'])
-        : null;
+    final caracteristics = json['caracteristics'] != null ? Caracteristics.fromJson(json['caracteristics']) : null;
+    final abilities = json['abilities'] != null ? Abilities.fromJson(json['abilities']) : null;
 
     return Character(
       name: json['name'],
       abilities: abilities,
       alterEgo: json['alterEgo'],
-      imagePath: json['imagePath'],
       biography: json['biography'],
       caracteristics: caracteristics,
       movies: json['movies'].cast<String>(),
+      imagePath: json['imagePath'].replaceAll("./", "assets/"),
     );
   }
 }
